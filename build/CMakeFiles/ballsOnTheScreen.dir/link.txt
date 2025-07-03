@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/ballsOnTheScreen.dir/link.d CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o -o ballsOnTheScreen  -lsfml-graphics -lsfml-window -lsfml-system

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Interpreter.dir/link.d CMakeFiles/Interpreter.dir/src/balls.cpp.o CMakeFiles/Interpreter.dir/src/gui.cpp.o CMakeFiles/Interpreter.dir/src/main.cpp.o -o Interpreter  -lsfml-graphics -lsfml-window -lsfml-system
