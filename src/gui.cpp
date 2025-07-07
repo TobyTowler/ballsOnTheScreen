@@ -29,6 +29,7 @@ void runGUI(int numberOfBalls) {
             window.draw(circle);
             balls[i].updatePos();
             std::cout << "Updated Ball " << i << "\n";
+            balls[0].printAngle();
         }
 
         window.display();

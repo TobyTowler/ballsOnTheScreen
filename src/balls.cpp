@@ -6,28 +6,32 @@
 
 const double time_step = 1.0 / 480.0;
 
-Ball::Ball()
-    : speed(20), angle((rand() % 360) * std::numbers::pi_v<double> / 180), posx(400), posy(300) {
-    rand();
-}
+Ball::Ball() : velx((rand() % 200) - 100), vely((rand() % 200) - 100), posx(400), posy(300) {}
 
-Ball::Ball(double speed, double posx, double posy)
-    : speed(speed), angle((rand() % 360) * std::numbers::pi_v<double> / 180), posx(posx),
-      posy(posy) {
-    rand();
-}
+Ball::Ball(double velx, double vely, double posx, double posy)
+    : velx(velx), vely(vely), posx(posx), posy(posy) {}
+
+Ball::Ball(double velx, double vely) : velx(velx), vely(vely), posx(400), posy(300) {}
 
 Ball::~Ball() {}
 
-void Ball::updatePos() {
-    double angle = this->angle;
-    double delta_x = speed * std::cos(angle) * time_step;
-    double delta_y = speed * std::sin(angle) * time_step;
+void Ball::printPos() { std::cout << "BALL POS" << posx << posy << "\n"; }
 
-    this->posx += delta_x;
-    this->posy += delta_y;
+void Ball::printAngle() {}
+
+void Ball::updatePos() {
+
+    if (posx < 0 || posx > 790) {
+        velx = -velx;
+    }
+    if (posy < 0 || posy > 590) {
+        vely = -vely;
+    }
+
+    posx += velx * time_step;
+    posy += vely * time_step;
 
     // std::cout << "Updated position: posx = " << posx << ", posy = " << posy << std::endl;
 };
 
-sf::Vector2f Ball::getPos() { return sf::Vector2f(this->posx, this->posy); }
+sf::Vector2f Ball::getPos() { return sf::Vector2f(posx, posy); }

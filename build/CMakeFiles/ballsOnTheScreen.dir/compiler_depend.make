@@ -141,15 +141,12 @@ CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o: /home/toby/Programming/CPP/ball
   /usr/include/c++/15.1.1/bits/specfun.h \
   /usr/include/c++/15.1.1/bits/std_abs.h \
   /usr/include/c++/15.1.1/bits/stl_algobase.h \
-  /usr/include/c++/15.1.1/bits/stl_bvector.h \
   /usr/include/c++/15.1.1/bits/stl_construct.h \
   /usr/include/c++/15.1.1/bits/stl_function.h \
   /usr/include/c++/15.1.1/bits/stl_iterator.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h \
   /usr/include/c++/15.1.1/bits/stl_pair.h \
-  /usr/include/c++/15.1.1/bits/stl_uninitialized.h \
-  /usr/include/c++/15.1.1/bits/stl_vector.h \
   /usr/include/c++/15.1.1/bits/streambuf.tcc \
   /usr/include/c++/15.1.1/bits/streambuf_iterator.h \
   /usr/include/c++/15.1.1/bits/string_view.tcc \
@@ -157,7 +154,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o: /home/toby/Programming/CPP/ball
   /usr/include/c++/15.1.1/bits/uses_allocator.h \
   /usr/include/c++/15.1.1/bits/uses_allocator_args.h \
   /usr/include/c++/15.1.1/bits/utility.h \
-  /usr/include/c++/15.1.1/bits/vector.tcc \
   /usr/include/c++/15.1.1/bits/version.h \
   /usr/include/c++/15.1.1/cassert \
   /usr/include/c++/15.1.1/cctype \
@@ -209,7 +205,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o: /home/toby/Programming/CPP/ball
   /usr/include/c++/15.1.1/tuple \
   /usr/include/c++/15.1.1/type_traits \
   /usr/include/c++/15.1.1/typeinfo \
-  /usr/include/c++/15.1.1/vector \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -831,6 +826,8 @@ CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o:
 
 /usr/include/c++/15.1.1/climits:
 
+/usr/include/c++/15.1.1/bits/vector.tcc:
+
 /usr/include/c++/15.1.1/bits/unique_ptr.h:
 
 /usr/include/c++/15.1.1/bits/uniform_int_dist.h:
@@ -841,9 +838,13 @@ CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o:
 
 /usr/include/c++/15.1.1/bits/stream_iterator.h:
 
+/usr/include/c++/15.1.1/bits/stl_uninitialized.h:
+
 /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h:
 
 /usr/include/c++/15.1.1/bits/stl_heap.h:
+
+/usr/include/c++/15.1.1/bits/stl_bvector.h:
 
 /usr/include/c++/15.1.1/bits/std_mutex.h:
 
@@ -945,6 +946,14 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/SFML/System/Err.hpp:
 
+/usr/include/c++/15.1.1/vector:
+
+/usr/include/c++/15.1.1/bits/monostate.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/SFML/Graphics/VertexBuffer.hpp:
+
 /usr/include/SFML/Graphics/Vertex.hpp:
 
 /usr/include/SFML/Graphics/View.hpp:
@@ -989,12 +998,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/SFML/Graphics/Glyph.hpp:
 
-/usr/include/SFML/Graphics/Export.hpp:
-
-/usr/lib/Scrt1.o:
-
-/usr/include/SFML/Graphics/Drawable.hpp:
-
 /usr/include/c++/15.1.1/bits/move.h:
 
 /usr/include/c++/15.1.1/bits/basic_ios.tcc:
@@ -1006,14 +1009,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 /usr/include/c++/15.1.1/bits/nested_exception.h:
 
 /usr/include/c++/15.1.1/numbers:
-
-/usr/include/c++/15.1.1/bits/monostate.h:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/include/SFML/Graphics/VertexBuffer.hpp:
-
-/usr/include/c++/15.1.1/vector:
 
 /usr/include/c++/15.1.1/bits/ostream.tcc:
 
@@ -1215,12 +1210,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h:
 
-/usr/include/SFML/Window/VideoMode.hpp:
-
-/usr/include/SFML/Graphics/Font.hpp:
-
-/usr/include/assert.h:
-
 /usr/include/c++/15.1.1/debug/assertions.h:
 
 /usr/include/asm-generic/errno-base.h:
@@ -1229,15 +1218,9 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/c++/15.1.1/string_view:
 
-/usr/include/SFML/Graphics/Glsl.inl:
-
-/usr/include/bits/typesizes.h:
-
 /usr/include/SFML/Graphics/BlendMode.hpp:
 
 /usr/include/bits/cpu-set.h:
-
-/usr/include/c++/15.1.1/bits/stl_bvector.h:
 
 /usr/include/bits/struct_mutex.h:
 
@@ -1399,11 +1382,11 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/bits/types/time_t.h:
 
+/usr/include/c++/15.1.1/bits/stl_vector.h:
+
 /usr/include/SFML/Window/WindowBase.hpp:
 
 /usr/include/asm-generic/int-ll64.h:
-
-/usr/include/c++/15.1.1/bits/stl_vector.h:
 
 /usr/include/c++/15.1.1/cwctype:
 
@@ -1461,8 +1444,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/c++/15.1.1/bits/streambuf_iterator.h:
 
-/usr/include/c++/15.1.1/bits/stl_uninitialized.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
 /usr/include/asm-generic/types.h:
@@ -1478,8 +1459,6 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 /usr/include/bits/types/__mbstate_t.h:
 
 /usr/include/c++/15.1.1/tr1/bessel_function.tcc:
-
-/usr/include/c++/15.1.1/bits/vector.tcc:
 
 /usr/include/c++/15.1.1/bits/version.h:
 
@@ -1571,6 +1550,10 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 
 /usr/include/c++/15.1.1/tr1/special_function_util.h:
 
+/usr/include/bits/typesizes.h:
+
+/usr/include/SFML/Graphics/Glsl.inl:
+
 /usr/include/c++/15.1.1/tuple:
 
 /usr/lib/libfreetype.so.6:
@@ -1600,6 +1583,12 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 /usr/include/c++/15.1.1/bits/stl_algo.h:
 
 /usr/include/endian.h:
+
+/usr/include/SFML/Window/VideoMode.hpp:
+
+/usr/include/assert.h:
+
+/usr/include/SFML/Graphics/Font.hpp:
 
 /usr/include/bits/getopt_posix.h:
 
@@ -1632,6 +1621,8 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 /usr/include/c++/15.1.1/bits/memoryfwd.h:
 
 /usr/include/locale.h:
+
+/usr/include/SFML/Graphics/Export.hpp:
 
 /usr/include/SFML/Graphics/Transform.hpp:
 
@@ -1678,3 +1669,7 @@ CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o:
 /usr/include/SFML/Graphics/Color.hpp:
 
 /usr/include/SFML/Graphics/Color.inl:
+
+/usr/lib/Scrt1.o:
+
+/usr/include/SFML/Graphics/Drawable.hpp:
