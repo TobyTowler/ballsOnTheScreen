@@ -1,6 +1,7 @@
 #pragma once
 
 #include "System/Vector2.hpp"
+#include "blocks.h"
 
 class Ball {
   private:
@@ -24,5 +25,5 @@ class Ball {
 
     void printAngle();
 
-    void updatePos();
+    void updatePos(std::vector<Block> &blocks);
 };

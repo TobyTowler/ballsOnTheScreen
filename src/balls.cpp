@@ -19,8 +19,9 @@ void Ball::printPos() { std::cout << "BALL POS" << posx << posy << "\n"; }
 
 void Ball::printAngle() {}
 
-void Ball::updatePos() {
+void Ball::updatePos(std::vector<Block> &blocks) {
 
+    // screen size
     if (posx < 0 || posx > 790) {
         velx = -velx;
     }
@@ -28,6 +29,24 @@ void Ball::updatePos() {
         vely = -vely;
     }
 
+    for (Block &b : blocks) {
+        int top = b.origin[1];
+        int bottom = b.origin[1] + b.height;
+        int left = b.origin[0];
+        int right = b.origin[0] + b.length;
+
+        if (posx + 10 > left && posx < right && posy > top - 11 && posy < top + 11 ||
+            posx + 10 > left && posx < right && posy > bottom - 1 && posy < bottom + 1) {
+            b.health--;
+            vely = -vely;
+        }
+
+        if (posy + 10 > top && posy < bottom && posx > left - 11 && posx < left + 11 ||
+            posy + 10 > top && posy < bottom && posx > right - 1 && posx < right + 1) {
+            b.health--;
+            velx = -velx;
+        }
+    }
     posx += velx * time_step;
     posy += vely * time_step;
 

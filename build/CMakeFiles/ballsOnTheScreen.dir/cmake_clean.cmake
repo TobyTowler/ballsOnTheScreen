@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ballsOnTheScreen.dir/link.d"
   "CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o"
   "CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o.d"
+  "CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o"
+  "CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o.d"
   "CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o"
   "CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o.d"
   "CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o"

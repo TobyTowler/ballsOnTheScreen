@@ -153,6 +153,30 @@ src/balls.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ballsOnTheScreen.dir/build.make CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.s
 .PHONY : src/balls.cpp.s
 
+src/blocks.o: src/blocks.cpp.o
+.PHONY : src/blocks.o
+
+# target to build an object file
+src/blocks.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ballsOnTheScreen.dir/build.make CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o
+.PHONY : src/blocks.cpp.o
+
+src/blocks.i: src/blocks.cpp.i
+.PHONY : src/blocks.i
+
+# target to preprocess a source file
+src/blocks.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ballsOnTheScreen.dir/build.make CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.i
+.PHONY : src/blocks.cpp.i
+
+src/blocks.s: src/blocks.cpp.s
+.PHONY : src/blocks.s
+
+# target to generate assembly for a file
+src/blocks.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ballsOnTheScreen.dir/build.make CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.s
+.PHONY : src/blocks.cpp.s
+
 src/gui.o: src/gui.cpp.o
 .PHONY : src/gui.o
 
@@ -213,6 +237,9 @@ help:
 	@echo "... src/balls.o"
 	@echo "... src/balls.i"
 	@echo "... src/balls.s"
+	@echo "... src/blocks.o"
+	@echo "... src/blocks.i"
+	@echo "... src/blocks.s"
 	@echo "... src/gui.o"
 	@echo "... src/gui.i"
 	@echo "... src/gui.s"

@@ -1,20 +1,43 @@
 #include "gui.h"
 #include "Graphics/CircleShape.hpp"
+#include "Graphics/Color.hpp"
+#include "Graphics/Font.hpp"
+#include "Graphics/RectangleShape.hpp"
+#include "Graphics/Text.hpp"
+#include "System/Vector2.hpp"
 #include "balls.h"
 #include "blocks.h"
 #include <SFML/Graphics.hpp>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include <vector>
 
 void runGUI(int numberOfBalls) {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Ball Spawner GUI");
-    window.setFramerateLimit(240);
 
     std::vector<Ball> balls(numberOfBalls);
 
-    Block block1 = Block(std::vector<int>{300, 400}, 30, 30);
-    Block block2 = Block(std::vector<int>{200, 200}, 30, 30);
-    Block block3 = Block(std::vector<int>{400, 700}, 30, 30);
+    std::vector<Block> blocks(2);
+
+    sf::Clock clock;
+
+    window.setFramerateLimit(0);
+    window.setVerticalSyncEnabled(0);
+
+    sf::CircleShape circle(5);
+    circle.setFillColor(sf::Color::White);
+
+    sf::Font font;
+    if (!font.openFromFile("/usr/share/fonts/Adwaita/AdwaitaMono-Bold.ttf")) {
+        std::cout << "NO FONT" << "\n";
+    }
+    sf::Text text(font);
+    text.setCharacterSize(15);
+    text.setFillColor(sf::Color::White);
+
+    sf::RectangleShape rectangle;
+    rectangle.setFillColor(sf::Color::Red);
 
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
@@ -23,18 +46,41 @@ void runGUI(int numberOfBalls) {
             }
         }
 
+        sf::Time deltaTime = clock.restart();
+        float fps = 1.0f / deltaTime.asSeconds();
+
+        std::cout << "FPS: " << fps << "\n";
+
         window.clear(sf::Color::Black);
 
         // for (Ball &b : balls) {
         for (int i = 0; i < balls.size(); i++) {
-            sf::CircleShape circle(5);
             // circle.setPosition(b.getPos());
             circle.setPosition(balls[i].getPos());
-            circle.setFillColor(sf::Color::White);
             window.draw(circle);
-            balls[i].updatePos();
-            std::cout << "Updated Ball " << i << "\n";
-            balls[0].printAngle();
+            balls[i].updatePos(blocks);
+            // std::cout << "Updated Ball " << i << "\n";
+            // balls[0].printAngle();
+        }
+
+        for (int i = 0; i < blocks.size(); i++) {
+            blocks.erase(std::remove_if(blocks.begin(), blocks.end(),
+                                        [](const Block &b) { return b.health < 1; }),
+                         blocks.end());
+        }
+
+        for (int i = 0; i < blocks.size(); i++) {
+            rectangle.setOrigin(sf::Vector2f(blocks[i].length, blocks[i].height));
+            rectangle.setPosition(sf::Vector2f(blocks[i].origin[0], blocks[i].origin[1]));
+            window.draw(rectangle);
+
+            text.setString(std::to_string(blocks[i].health));
+            text.setPosition(sf::Vector2f(blocks[i].origin[0] + 5, blocks[i].origin[1] + 5));
+            window.draw(text);
+        }
+        if (rand() % 1000 < 2) {
+            Block block;
+            blocks.push_back(block);
         }
 
         window.display();

@@ -2,7 +2,9 @@
 #include "Window/Sensor.hpp"
 #include <cstdlib>
 
-Block::Block() : origin(rand() % 800, rand() % 600), length(30), height(30) {}
+Block::Block()
+    : origin(rand() % 800, rand() % 600), length(rand() % 130 + 30), height(rand() % 130 + 30),
+      health(rand() % 200) {}
 
-Block::Block(std::vector<int> origin, int length, int height)
-    : origin(origin), length(length), height(height) {}
+Block::Block(std::vector<float> origin, int length, int height, int health)
+    : origin(origin), length(length), height(height), health(health) {}

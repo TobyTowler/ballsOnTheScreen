@@ -3,6 +3,7 @@ ballsOnTheScreen: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
   CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o \
+  CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o \
   CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o \
   CMakeFiles/ballsOnTheScreen.dir/src/main.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libsfml-graphics.so \
@@ -65,6 +66,8 @@ ballsOnTheScreen: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
 CMakeFiles/ballsOnTheScreen.dir/src/balls.cpp.o:
+
+CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o:
 
 CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o:
 

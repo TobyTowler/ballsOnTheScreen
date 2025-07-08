@@ -7,6 +7,12 @@
 },
 {
   "directory": "/home/toby/Programming/CPP/ballsOnTheScreen/build",
+  "command": "/usr/bin/c++  -I/home/toby/Programming/CPP/ballsOnTheScreen/include -I/usr/include/SFML -std=gnu++20 -o CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o -c /home/toby/Programming/CPP/ballsOnTheScreen/src/blocks.cpp",
+  "file": "/home/toby/Programming/CPP/ballsOnTheScreen/src/blocks.cpp",
+  "output": "CMakeFiles/ballsOnTheScreen.dir/src/blocks.cpp.o"
+},
+{
+  "directory": "/home/toby/Programming/CPP/ballsOnTheScreen/build",
   "command": "/usr/bin/c++  -I/home/toby/Programming/CPP/ballsOnTheScreen/include -I/usr/include/SFML -std=gnu++20 -o CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o -c /home/toby/Programming/CPP/ballsOnTheScreen/src/gui.cpp",
   "file": "/home/toby/Programming/CPP/ballsOnTheScreen/src/gui.cpp",
   "output": "CMakeFiles/ballsOnTheScreen.dir/src/gui.cpp.o"
