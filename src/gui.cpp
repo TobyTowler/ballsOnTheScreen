@@ -18,7 +18,7 @@ void runGUI(int numberOfBalls) {
 
     std::vector<Ball> balls(numberOfBalls);
 
-    std::vector<Block> blocks(2);
+    std::vector<Block> blocks(4);
 
     sf::Clock clock;
 
@@ -38,6 +38,8 @@ void runGUI(int numberOfBalls) {
 
     sf::RectangleShape rectangle;
     rectangle.setFillColor(sf::Color::Red);
+    rectangle.setOutlineColor(sf::Color::Blue);
+    rectangle.setOutlineThickness(2);
 
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
@@ -46,39 +48,44 @@ void runGUI(int numberOfBalls) {
             }
         }
 
-        sf::Time deltaTime = clock.restart();
-        float fps = 1.0f / deltaTime.asSeconds();
+        std::cout << "Number of Balls: " << balls.size() << "\n";
 
-        std::cout << "FPS: " << fps << "\n";
+        // sf::Time deltaTime = clock.restart();
+        // float fps = 1.0f / deltaTime.asSeconds();
+        //
+        // std::cout << "FPS: " << fps << "\n";
 
         window.clear(sf::Color::Black);
 
-        // for (Ball &b : balls) {
         for (int i = 0; i < balls.size(); i++) {
-            // circle.setPosition(b.getPos());
             circle.setPosition(balls[i].getPos());
             window.draw(circle);
             balls[i].updatePos(blocks);
             // std::cout << "Updated Ball " << i << "\n";
-            // balls[0].printAngle();
         }
 
-        for (int i = 0; i < blocks.size(); i++) {
+        // for (int i = 0; i < blocks.size(); i++) {
+        for (Block b : blocks) {
+
+            if (b.health < 1) {
+                balls.push_back(Ball(b.originx + b.length / 2, b.originy + b.height / 2));
+            }
+
             blocks.erase(std::remove_if(blocks.begin(), blocks.end(),
                                         [](const Block &b) { return b.health < 1; }),
                          blocks.end());
         }
 
         for (int i = 0; i < blocks.size(); i++) {
-            rectangle.setOrigin(sf::Vector2f(blocks[i].length, blocks[i].height));
-            rectangle.setPosition(sf::Vector2f(blocks[i].origin[0], blocks[i].origin[1]));
+            rectangle.setPosition(sf::Vector2f(blocks[i].originx, blocks[i].originy));
+            rectangle.setSize(sf::Vector2f(blocks[i].length, blocks[i].height));
             window.draw(rectangle);
 
             text.setString(std::to_string(blocks[i].health));
-            text.setPosition(sf::Vector2f(blocks[i].origin[0] + 5, blocks[i].origin[1] + 5));
+            text.setPosition(sf::Vector2f(blocks[i].originx + 5, blocks[i].originy + 5));
             window.draw(text);
         }
-        if (rand() % 1000 < 2) {
+        if (rand() % 250000 < numberOfBalls) {
             Block block;
             blocks.push_back(block);
         }

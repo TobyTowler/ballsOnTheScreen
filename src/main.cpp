@@ -4,6 +4,6 @@
 
 int main() {
     srand(time(nullptr));
-    runGUI(1000);
+    runGUI(10);
     return 0;
 }

@@ -1,17 +1,18 @@
 #include "balls.h"
 #include "System/Vector2.hpp"
-#include <cmath>
 #include <iostream>
-#include <numbers>
 
-const double time_step = 1.0 / 480.0;
+const double time_step = 1.0 / 500.0;
 
 Ball::Ball() : velx((rand() % 200) - 100), vely((rand() % 200) - 100), posx(400), posy(300) {}
 
 Ball::Ball(double velx, double vely, double posx, double posy)
     : velx(velx), vely(vely), posx(posx), posy(posy) {}
 
-Ball::Ball(double velx, double vely) : velx(velx), vely(vely), posx(400), posy(300) {}
+// Ball::Ball(double velx, double vely) : velx(velx), vely(vely), posx(400), posy(300) {}
+
+Ball::Ball(double posx, double posy)
+    : velx((rand() % 200) - 100), vely((rand() % 200) - 100), posx(posx), posy(posy) {}
 
 Ball::~Ball() {}
 
@@ -30,10 +31,10 @@ void Ball::updatePos(std::vector<Block> &blocks) {
     }
 
     for (Block &b : blocks) {
-        int top = b.origin[1];
-        int bottom = b.origin[1] + b.height;
-        int left = b.origin[0];
-        int right = b.origin[0] + b.length;
+        int top = b.originy;
+        int bottom = b.originy + b.height;
+        int left = b.originx;
+        int right = b.originx + b.length;
 
         if (posx + 10 > left && posx < right && posy > top - 11 && posy < top + 11 ||
             posx + 10 > left && posx < right && posy > bottom - 1 && posy < bottom + 1) {
@@ -46,9 +47,12 @@ void Ball::updatePos(std::vector<Block> &blocks) {
             b.health--;
             velx = -velx;
         }
+        // Block(std::vector<float> origin, int length, int height, int health);
     }
     posx += velx * time_step;
     posy += vely * time_step;
+    // posx += velx;
+    // posy += vely;
 
     // std::cout << "Updated position: posx = " << posx << ", posy = " << posy << std::endl;
 };

@@ -13,7 +13,9 @@ class Ball {
   public:
     Ball(double velx, double vely, double posx, double posy);
 
-    Ball(double velx, double vely);
+    // Ball(double velx, double vely);
+
+    Ball(double posx, double posy);
 
     Ball();
 

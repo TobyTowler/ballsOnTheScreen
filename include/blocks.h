@@ -7,11 +7,13 @@ class Block {
      * height is down
      */
   public:
-    std::vector<float> origin;
+    // std::vector<float> origin;
+    float originx;
+    float originy;
     int length;
     int height;
     int health;
 
-    Block(std::vector<float> origin, int length, int height, int health);
+    Block(float originx, float originy, int length, int height, int health);
     Block();
 };
