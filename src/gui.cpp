@@ -48,8 +48,6 @@ void runGUI(int numberOfBalls) {
             }
         }
 
-        std::cout << "Number of Balls: " << balls.size() << "\n";
-
         // sf::Time deltaTime = clock.restart();
         // float fps = 1.0f / deltaTime.asSeconds();
         //
@@ -69,6 +67,7 @@ void runGUI(int numberOfBalls) {
 
             if (b.health < 1) {
                 balls.push_back(Ball(b.originx + b.length / 2, b.originy + b.height / 2));
+                std::cout << "Number of Balls: " << balls.size() << "\n";
             }
 
             blocks.erase(std::remove_if(blocks.begin(), blocks.end(),
